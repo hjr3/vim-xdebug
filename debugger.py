@@ -921,7 +921,7 @@ class Debugger:
     """ start debugger or continue """
     if self.protocol.isconnected():
       self.command('run')
-      if self.status != 'stopped':
+      if self.status != 'stopped' and self.status != 'stopping':
         self.command('stack_get')
     else:
       self.clear()
